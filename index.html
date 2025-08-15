@@ -1,37 +1,225 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content = "width=device-width, intial-scale =1.0">
-    <title>Regina's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regina Kim - Portfolio</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script defer src="src/script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to my Website!</h1>
-    </header>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">Regina Kim</a>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('about')">About</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('projects')">Projects</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
 
-<!-- NAVIGATION MENU-->
-<nav>
-    <ul>
-        <li><a href="">Portfolio</a></li>
-        <ul>
-            <li><a href="">Graphics</a></li>
-            <li><a href="">Illustrations</a></li>
-            <li><a href="">3D Works</a></li>
-            <li><a href="">Personal Works</a></li>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <ul class="mobile-nav-links">
+            <li><a href="#" class="nav-link" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" class="nav-link" onclick="showPage('about')">About</a></li>
+            <li><a href="#" class="nav-link" onclick="showPage('projects')">Projects</a></li>
+            <li><a href="#" class="nav-link" onclick="showPage('contact')">Contact</a></li>
         </ul>
-        <li><a href="">Resume</a></li>
-        <li><a href="">Contact</a></li>
-    </ul>
-</nav>
-<!--ARTWORK DISPLAY SECTION-->
+    </div>
 
+    <!-- Fixed Carousel Arrows -->
+    <button class="home-arrows prev" id="globalPrevBtn">‹</button>
+    <button class="home-arrows next" id="globalNextBtn">›</button>
 
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Home Page with Carousel -->
+        <div id="home" class="page active">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Project Slide 1 -->
+                        <div class="carousel-slide">
+                            <div class="project-slide">
+                                <div class="project-image">Web Platform</div>
+                                <h3>TaskFlow Pro</h3>
+                                <p>A comprehensive project management platform built with React and Node.js, featuring real-time collaboration, advanced analytics, and intuitive user experience design.</p>
+                            </div>
+                        </div>
+                        <!-- Project Slide 2 -->
+                        <div class="carousel-slide">
+                            <div class="project-slide">
+                                <div class="project-image">Mobile App</div>
+                                <h3>HealthTrack</h3>
+                                <p>Cross-platform health and wellness application with personalized tracking, AI-powered insights, and seamless integration across iOS and Android devices.</p>
+                            </div>
+                        </div>
+                        <!-- Project Slide 3 -->
+                        <div class="carousel-slide">
+                            <div class="project-slide">
+                                <div class="project-image">Analytics</div>
+                                <h3>DataViz Dashboard</h3>
+                                <p>Interactive data visualization platform featuring real-time analytics, customizable charts, and machine learning-powered predictive insights for business intelligence.</p>
+                            </div>
+                        </div>
+                        <!-- Project Slide 4 -->
+                        <div class="carousel-slide">
+                            <div class="project-slide">
+                                <div class="project-image">E-Commerce</div>
+                                <h3>ShopSmart</h3>
+                                <p>Complete e-commerce solution with advanced payment processing, inventory management, and personalized shopping experiences powered by AI recommendations.</p>
+                            </div>
+                        </div>
+                        <!-- Contact Slide -->
+                        <div class="carousel-slide">
+                            <div class="contact-slide">
+                                <h3>Let's Create Together</h3>
+                                <p>Ready to bring your vision to life? I'd love to discuss your next project and explore how we can build something amazing.</p>
+                                <button class="contact-btn" onclick="showPage('contact')">Start a Conversation</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-arrows prev" id="prevBtn">‹</button>
+                    <button class="carousel-arrows next" id="nextBtn">›</button>
+                    <div class="carousel-nav">
+                        <div class="nav-dot active" onclick="goToSlide(0)"></div>
+                        <div class="nav-dot" onclick="goToSlide(1)"></div>
+                        <div class="nav-dot" onclick="goToSlide(2)"></div>
+                        <div class="nav-dot" onclick="goToSlide(3)"></div>
+                        <div class="nav-dot" onclick="goToSlide(4)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!--CONTACT SECTION-->
+        <!-- About Page -->
+        <div id="about" class="page">
+            <div class="content-container">
+                <div class="page-header">
+                    <h2>About Me</h2>
+                    <p>Passionate about creating meaningful digital experiences</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-image-placeholder">
+                        Your Photo
+                    </div>
+                    <div class="about-text">
+                        <p>Hello! I'm Regina Kim, a dedicated software developer with a passion for crafting elegant solutions to complex problems. My journey in technology began with curiosity about how digital experiences shape our daily lives, and has evolved into a career focused on creating meaningful, user-centered applications.</p>
+                        
+                        <p>With expertise spanning full-stack development, mobile applications, and data visualization, I thrive on turning innovative ideas into reality. I believe great software isn't just functional—it's intuitive, accessible, and delightful to use.</p>
+                        
+                        <p>When I'm not coding, you'll find me exploring emerging technologies, contributing to open-source projects, or enjoying a perfectly brewed cup of coffee while sketching out my next big idea.</p>
+                    </div>
+                </div>
+                <div class="skills-section">
+                    <h3>Technical Expertise</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Autodesk 3DS Max</div>
+                        <div class="skill-item">Adobe Photoshop</div>
+                        <div class="skill-item">Adobe Illustrator</div>
+                        <div class="skill-item">Substance 3D Painter</div>
+                        <div class="skill-item">Adobe Premiere Pro</div>
+                        <div class="skill-item">SQL</div>
+                        <div class="skill-item">AWS</div>
+                        <div class="skill-item">Docker</div>
+                        <div class="skill-item">GraphQL</div>
+                        <div class="skill-item">React Native</div>
+                        <div class="skill-item">MongoDB</div>
+                        <div class="skill-item">Git</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<footer>
-    <p>&copy; 2024 Regina Kim</p>
-</footer>
+        <!-- Projects Page -->
+        <div id="projects" class="page">
+            <div class="content-container">
+                <div class="page-header">
+                    <h2>Featured Projects</h2>
+                    <p>A showcase of my recent work and creative solutions</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>TaskFlow Pro</h3>
+                        <p>A comprehensive project management platform featuring real-time collaboration, advanced task tracking, and intelligent workflow automation. Built with React, Node.js, and WebSocket technology for seamless team coordination.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>HealthTrack Mobile</h3>
+                        <p>Cross-platform health and wellness application with personalized tracking, AI-powered insights, and comprehensive health analytics. Developed using React Native with seamless cloud synchronization.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>DataViz Dashboard</h3>
+                        <p>Interactive business intelligence platform featuring real-time data visualization, customizable reporting, and machine learning integration. Built with D3.js, Python Flask, and advanced analytics algorithms.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>ShopSmart E-commerce</h3>
+                        <p>Complete e-commerce solution with AI-powered recommendations, secure payment processing, and comprehensive inventory management. Features modern UI/UX design and scalable architecture.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Neural Network Classifier</h3>
+                        <p>Machine learning application for image classification using TensorFlow and Python. Includes data preprocessing, model training, and deployment pipeline with 95% accuracy on test datasets.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>API Gateway Service</h3>
+                        <p>Scalable microservices architecture with RESTful API development, authentication middleware, and comprehensive documentation. Built with Express.js, MongoDB, and Docker containerization.</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-</body>
-</html>
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <div class="content-container">
+                <div class="page-header">
+                    <h2>Get in Touch</h2>
+                    <p>Let's discuss your next project or collaboration opportunity</p>
+                </div>
+                <div class="contact-content">
+                    <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+
+                    <div class="contact-info">
+                        <h3>Let's Connect!</h3>
+                        <p>📧 reginakim99@gmail.com</p>
+                        <p>📱 (925) 791-7477</p>
+                        <p>📍 La Jolla, CA</p>
+                        <p>💼 linkedin.com/in/reginakim99</p>
+                        <p>🐙 github.com/reginakim</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 Regina Kim. All rights reserved.
+    </div>
